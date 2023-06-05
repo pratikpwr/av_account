@@ -20,7 +20,6 @@ const textTheme = TextTheme(
     fontFamily: 'Acumin-Pro',
     fontSize: 14,
     fontWeight: FontWeight.bold,
-    letterSpacing: -0.4,
   ),
   bodyMedium: TextStyle(
     //primary regular

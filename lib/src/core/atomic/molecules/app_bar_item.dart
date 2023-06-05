@@ -13,7 +13,7 @@ AppBar appBarItem(
   return AppBar(
     title: Text(
       title,
-      style: context.textTheme.titleSmall,
+      style: context.textTheme.titleSmall?.copyWith(color: AppColors.white),
     ),
     leading: leadingIcon != null
         ? InkWell(

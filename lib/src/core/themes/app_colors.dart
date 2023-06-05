@@ -12,4 +12,6 @@ class AppColors {
   static const Color backgroundColor = Color.fromRGBO(23, 30, 38, 1);
 
   static const Color lightBackgroundColor = Color.fromRGBO(35, 44, 54, 1);
+
+  static const Color white = Color.fromRGBO(255, 255, 255, 1);
 }

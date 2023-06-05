@@ -7,7 +7,7 @@ class AppTheme {
     fontFamily: 'Acumin-Pro',
     scaffoldBackgroundColor: AppColors.backgroundColor,
     brightness: Brightness.dark,
-    textTheme: textTheme,
+    textTheme: textTheme.apply(bodyColor: AppColors.textColor),
     // useMaterial3: true,
   );
 }
