@@ -23,3 +23,9 @@ const padding28 = SizedBox(height: 28, width: 28);
 const padding32 = SizedBox(height: 32, width: 32);
 
 const padding36 = SizedBox(height: 36, width: 36);
+
+const padding64 = SizedBox(height: 64, width: 64);
+
+const padding72 = SizedBox(height: 72, width: 72);
+
+const padding128 = SizedBox(height: 128, width: 128);

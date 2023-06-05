@@ -1,11 +1,12 @@
-import 'package:av_account/src/core/atomic/atoms/padding.dart';
-import 'package:av_account/src/core/extensions/context_extensions.dart';
-import 'package:av_account/src/features/my_account/widgets/language_bottom_sheet.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/atomic/atoms/padding.dart';
 import '../../../core/atomic/molecules/app_bar_item.dart';
 import '../../../core/constants/assets.dart';
+import '../../../core/extensions/context_extensions.dart';
 import '../../../core/themes/app_colors.dart';
+import '../widgets/language_bottom_sheet.dart';
 import '../widgets/setting_widget.dart';
 import '../widgets/setting_with_icon_widget.dart';
 
@@ -43,6 +44,24 @@ class MyAccountScreen extends StatelessWidget {
               title: 'Edit My Languages',
               onTap: () => languageBottomSheet(context),
             ),
+            Container(
+              padding: const EdgeInsets.only(left: 8, right: 16),
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Customize Interface',
+                    style: context.textTheme.bodyMedium,
+                  ),
+                  CupertinoSwitch(
+                    value: false,
+                    onChanged: (_) {},
+                    activeColor: AppColors.primaryColor,
+                  ),
+                ],
+              ),
+            ),
             SettingWidget(
               title: 'Terms of Service',
               onTap: () {},
@@ -67,7 +86,7 @@ class MyAccountScreen extends StatelessWidget {
             ),
             Expanded(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Image.asset(
                     Assets.logo,
@@ -81,7 +100,8 @@ class MyAccountScreen extends StatelessWidget {
                       decoration: TextDecoration.underline,
                       decorationColor: AppColors.primaryColor,
                     ),
-                  )
+                  ),
+                  padding72,
                 ],
               ),
             ),
