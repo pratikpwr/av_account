@@ -1,4 +1,6 @@
+import 'package:av_account/src/features/my_account/domain/use_cases/cache_custom_interface_use_case.dart';
 import 'package:av_account/src/features/my_account/domain/use_cases/cache_selected_language.dart';
+import 'package:av_account/src/features/my_account/domain/use_cases/custom_interface_use_case.dart';
 import 'package:av_account/src/features/my_account/domain/use_cases/languages_use_case.dart';
 import 'package:get_it/get_it.dart';
 
@@ -13,6 +15,8 @@ final sl = GetIt.instance;
 Future<void> init() async {
   sl.registerLazySingleton(() => CacheSelectedLanguagesUseCase(sl()));
   sl.registerLazySingleton(() => LanguagesUseCase(sl()));
+  sl.registerLazySingleton(() => CacheCustomInterfaceUseCase(sl()));
+  sl.registerLazySingleton(() => CustomInterfaceUseCase(sl()));
 
   sl.registerLazySingleton<MyAccountRepository>(
     () => MyAccountRepositoryImpl(

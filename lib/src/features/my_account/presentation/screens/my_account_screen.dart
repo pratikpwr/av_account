@@ -7,6 +7,7 @@ import '../../../../core/atomic/molecules/app_bar_item.dart';
 import '../../../../core/constants/assets.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/themes/app_colors.dart';
+import '../providers/custom_inteface_provider/custom_interface_state_provider.dart';
 import '../providers/language_provider/language_state_provider.dart';
 import '../widgets/language_bottom_sheet.dart';
 import '../widgets/setting_widget.dart';
@@ -17,6 +18,7 @@ class MyAccountScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final isCustomInterface = ref.watch(customInterfaceNotifierProvider);
     return Scaffold(
       appBar: appBarItem(
         context,
@@ -60,8 +62,10 @@ class MyAccountScreen extends ConsumerWidget {
                     style: context.textTheme.bodyMedium,
                   ),
                   CupertinoSwitch(
-                    value: false,
-                    onChanged: (_) {},
+                    value: isCustomInterface,
+                    onChanged: (value) => ref
+                        .read(customInterfaceNotifierProvider.notifier)
+                        .updateCustomInterface(value),
                     activeColor: AppColors.primaryColor,
                   ),
                 ],

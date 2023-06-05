@@ -1,3 +1,4 @@
+import 'package:av_account/src/features/my_account/domain/use_cases/cache_custom_interface_use_case.dart';
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/error/exceptions.dart';
@@ -62,6 +63,27 @@ class MyAccountRepositoryImpl implements MyAccountRepository {
       return Left(ServerFailure());
     } on ParsingException {
       return Left(ParsingFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> cacheCustomInterface(
+      CacheCustomInterfaceParams params) async {
+    try {
+      await localDataSource.cacheCustomInterface(params.isCustomInterface);
+      return const Right(null);
+    } on CacheException {
+      return Left(CacheFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> customInterface() async {
+    try {
+      final result = await localDataSource.customInterface();
+      return Right(result);
+    } on CacheException {
+      return Left(CacheFailure());
     }
   }
 }
