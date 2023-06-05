@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/extensions/context_extensions.dart';
-import '../../../core/themes/app_colors.dart';
+import '../../../../core/extensions/context_extensions.dart';
+import '../../../../core/themes/app_colors.dart';
 
 class SettingWidget extends StatelessWidget {
   const SettingWidget({
