@@ -1,20 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/atomic/atoms/padding.dart';
 import '../../../../core/atomic/molecules/app_bar_item.dart';
 import '../../../../core/constants/assets.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/themes/app_colors.dart';
+import '../providers/language_provider/language_state_provider.dart';
 import '../widgets/language_bottom_sheet.dart';
 import '../widgets/setting_widget.dart';
 import '../widgets/setting_with_icon_widget.dart';
 
-class MyAccountScreen extends StatelessWidget {
+class MyAccountScreen extends ConsumerWidget {
   const MyAccountScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: appBarItem(
         context,
@@ -42,7 +44,10 @@ class MyAccountScreen extends StatelessWidget {
             SettingWithIconWidget(
               icon: Assets.language,
               title: 'Edit My Languages',
-              onTap: () => languageBottomSheet(context),
+              onTap: () {
+                languageBottomSheet(context);
+                ref.read(languageNotifierProvider.notifier).allLanguages();
+              },
             ),
             Container(
               padding: const EdgeInsets.only(left: 8, right: 16),

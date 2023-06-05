@@ -10,6 +10,6 @@ final languageNotifierProvider =
     return LanguageNotifier(
       cacheSelectedLanguagesUseCase: sl(),
       languagesUseCase: sl(),
-    )..allLanguages();
+    );
   },
 );
