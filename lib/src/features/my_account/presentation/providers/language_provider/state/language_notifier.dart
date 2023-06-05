@@ -1,4 +1,4 @@
-import 'package:av_account/src/core/usecases/usecase.dart';
+import '../../../../../../core/usecases/usecase.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../domain/entities/language_entity.dart';

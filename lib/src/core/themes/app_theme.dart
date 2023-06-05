@@ -1,6 +1,7 @@
-import 'package:av_account/src/core/themes/app_colors.dart';
-import 'package:av_account/src/core/themes/text_theme.dart';
 import 'package:flutter/material.dart';
+
+import 'app_colors.dart';
+import 'text_theme.dart';
 
 class AppTheme {
   static ThemeData theme = ThemeData(

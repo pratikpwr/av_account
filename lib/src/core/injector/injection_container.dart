@@ -1,7 +1,7 @@
-import 'package:av_account/src/features/my_account/domain/use_cases/cache_custom_interface_use_case.dart';
-import 'package:av_account/src/features/my_account/domain/use_cases/cache_selected_language.dart';
-import 'package:av_account/src/features/my_account/domain/use_cases/custom_interface_use_case.dart';
-import 'package:av_account/src/features/my_account/domain/use_cases/languages_use_case.dart';
+import '../../features/my_account/domain/use_cases/cache_custom_interface_use_case.dart';
+import '../../features/my_account/domain/use_cases/cache_selected_language.dart';
+import '../../features/my_account/domain/use_cases/custom_interface_use_case.dart';
+import '../../features/my_account/domain/use_cases/languages_use_case.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../features/my_account/data/data_sources/my_account_local_data_source.dart';
