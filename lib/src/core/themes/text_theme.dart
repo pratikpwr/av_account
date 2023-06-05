@@ -32,7 +32,7 @@ const textTheme = TextTheme(
     fontFamily: 'Acumin-Pro',
     fontSize: 14,
     fontWeight: FontWeight.bold,
-    letterSpacing: 0.5,
+    letterSpacing: 1.05,
   ),
   bodySmall: TextStyle(
     // secondary regular

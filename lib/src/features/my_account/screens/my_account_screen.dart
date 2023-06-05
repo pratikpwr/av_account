@@ -1,5 +1,6 @@
 import 'package:av_account/src/core/atomic/atoms/padding.dart';
 import 'package:av_account/src/core/extensions/context_extensions.dart';
+import 'package:av_account/src/features/my_account/widgets/language_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/atomic/molecules/app_bar_item.dart';
@@ -40,7 +41,7 @@ class MyAccountScreen extends StatelessWidget {
             SettingWithIconWidget(
               icon: Assets.language,
               title: 'Edit My Languages',
-              onTap: () {},
+              onTap: () => languageBottomSheet(context),
             ),
             SettingWidget(
               title: 'Terms of Service',
